@@ -22,6 +22,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar!!.title = "Welcome To Learn Kotlin"
 
+
+        ///////////////Object Of Practice Class and method overloading////////////////////
+        var practice: PracticeClass = PracticeClass();
+
+        practice.getPrice()
+        practice.getPrice(23)
+        practice.getPrice("Employed")
+        practice.getPrice("Adnan", "Ahmed")
+        var returnType: String = practice.returnTypeFuction()
+        Log.d("TAG", "The Value Returned Is " + returnType);
+        practice.baap(3);
+        practice.baap();
+
         var simpleListView = findViewById(R.id.simpleListView) as Button
         simpleListView.setOnClickListener(View.OnClickListener {
             var i = Intent(this, SimpleListView::class.java)
