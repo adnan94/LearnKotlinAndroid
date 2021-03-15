@@ -1,4 +1,4 @@
-package revo.adnan.com.learnkotln
+package com.example.demokotlin
 
 import org.junit.Test
 

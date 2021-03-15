@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kotlin.adnan.com.learnkotln">
+    package="com.example.demokotlin">
 
     <application
         android:allowBackup="true"
@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.RecyclerViewList"></activity>
         <activity android:name="revo.adnan.com.learnkotln.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name="revo.adnan.com.learnkotln.SimpleListView" />
-        <activity android:name="revo.adnan.com.learnkotln.CustomListView"></activity>
+        <activity android:name="revo.adnan.com.learnkotln.CustomListView" />
+        <activity android:name="revo.adnan.com.learnkotln.TabLayoutActivity" />
     </application>
 
 </manifest>

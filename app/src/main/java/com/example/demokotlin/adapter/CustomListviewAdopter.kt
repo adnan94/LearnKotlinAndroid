@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import kotlin.adnan.com.learnkotln.R
+import com.example.demokotlin.R
 
 /**
  * Created by AdnanAhmed on 4/4/2018.
  */
-class Adopter(context: Context,val sList:ArrayList<Model>) : BaseAdapter() {
+class CustomListviewAdopter(context: Context, val sList:ArrayList<Model>) : BaseAdapter() {
     private val mInflator: LayoutInflater
 
     init {

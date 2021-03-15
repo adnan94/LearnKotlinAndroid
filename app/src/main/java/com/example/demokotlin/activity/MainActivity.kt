@@ -1,54 +1,67 @@
 package revo.adnan.com.learnkotln
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlin.adnan.com.learnkotln.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import com.example.demokotlin.R
+import com.example.demokotlin.activity.RecyclerViewList
+import com.example.demokotlin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    val TAG: String = "TAG";
 
-//    var listview: ListView? = null;
-//    var editText: EditText? = null;
-//    var add: Button? = null;
-//   var list:ArrayList<String>?=null
+
+    var binding: ActivityMainBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         supportActionBar!!.title = "Welcome To Learn Kotlin"
+        practiceWork();
+        clicks();
 
+    }
 
-        ///////////////Object Of Practice Class and method overloading////////////////////
-        var practice: PracticeClass = PracticeClass();
-
-        practice.getPrice()
-        practice.getPrice(23)
-        practice.getPrice("Employed")
-        practice.getPrice("Adnan", "Ahmed")
-        var returnType: String = practice.returnTypeFuction()
-        Log.d("TAG", "The Value Returned Is " + returnType);
-        practice.baap(3);
-        practice.baap();
-
-        var simpleListView = findViewById(R.id.simpleListView) as Button
-        simpleListView.setOnClickListener(View.OnClickListener {
+    // apply on click listener
+    private fun clicks() {
+        binding!!.simpleListView.setOnClickListener(View.OnClickListener {
             var i = Intent(this, SimpleListView::class.java)
             startActivity(i)
         })
 
 
-        var customListView = findViewById(R.id.customListView) as Button
-        customListView.setOnClickListener(View.OnClickListener {
+        binding!!.customListView.setOnClickListener(View.OnClickListener {
             var i = Intent(this, CustomListView::class.java)
             startActivity(i)
         })
 
-//        var a: Int = 10;
+        binding!!.recyclerViewLst.setOnClickListener(View.OnClickListener {
+            var i = Intent(this, RecyclerViewList::class.java)
+            startActivity(i)
+        })
+
+        binding!!.tabLayoutBtn.setOnClickListener(View.OnClickListener {
+            var i = Intent(this, TabLayoutActivity::class.java)
+            startActivity(i)
+        })
+    }
+
+    private fun practiceWork() {
+        ///////////////Object Of Practice Class and method overloading////////////////////
+        var practice: PracticeClass = PracticeClass();
+        practice.getPrice()
+        practice.getPrice(23)
+        practice.getPrice("Employed")
+        practice.getPrice("Adnan", "Ahmed")
+
+        var returnType: String = practice.returnTypeFuction()
+        Log.d("TAG", "The Value Returned Is " + returnType);
+        practice.baap(3);
+        practice.baap();
+        //        var a: Int = 10;
 //        val b: Int = 20;
 //        var c: Int = 30;
 //        Log.d("TAG", "Value Of A" + a);
@@ -166,8 +179,6 @@ class MainActivity : AppCompatActivity() {
 
 //Array List
 //        val list = arrayListOf<String>()
-//        list.add("Sumbal")
-//        list.add("Ayesha")
 //        list.add("Kanwal")
 //        list.add("Erum")
 //        list.add("Emman")
@@ -177,7 +188,7 @@ class MainActivity : AppCompatActivity() {
 //            Log.d("TAG","i"+i);
 //        }
 
-//        var list = arrayListOf("Ayesha","<3","ADnan")
+//        var list = arrayListOf("Tello","<3","Talk")
 //        for(i in list){
 //            Log.d("TAG","i"+i);
 //        }
@@ -185,14 +196,15 @@ class MainActivity : AppCompatActivity() {
 
 /////////switch/Case
 
-//        var sheIs = "Kutti"
+//        var sheIs = "sweet"
 //        when (sheIs) {
-//            "Bitch" -> Log.d("TAG", "She is bitch")
+//            "cruel" -> Log.d("TAG", "She is cruel")
 //            "Sweet" -> Log.d("TAG", "She is sweet")
 //            else -> {
-//                Log.d("TAG", "she is neither bitch nor sweet")
+//                Log.d("TAG", "she is neither cruel nor sweet")
 //            }
 //        }
+
 
     }
 

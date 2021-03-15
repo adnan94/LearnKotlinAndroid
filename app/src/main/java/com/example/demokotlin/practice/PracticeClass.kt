@@ -29,7 +29,7 @@ class PracticeClass :ParentClass(){
     }
 
     fun returnTypeFuction():String {
-    return "Fuck You !!"
+    return "Fuck You "
     }
 
 }
