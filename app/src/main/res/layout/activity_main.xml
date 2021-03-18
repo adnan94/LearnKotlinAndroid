@@ -71,6 +71,14 @@
                 android:text="Tab Layout / View Pager"
                 android:layout_marginBottom="10dp"
                 android:textAllCaps="false" />
+            <Button
+                android:id="@+id/retrofitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Retrofit"
+                android:layout_marginBottom="10dp"
+                android:textAllCaps="false" />
 
         </LinearLayout>
 

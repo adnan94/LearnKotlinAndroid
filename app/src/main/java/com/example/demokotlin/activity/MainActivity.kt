@@ -47,6 +47,11 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this, TabLayoutActivity::class.java)
             startActivity(i)
         })
+
+        binding!!.retrofitBtn.setOnClickListener(View.OnClickListener {
+            var i = Intent(this, RetrofitActivity::class.java)
+            startActivity(i)
+        })
     }
 
     private fun practiceWork() {
