@@ -1,14 +1,17 @@
-package com.example.demokotlin
+package com.example.demokotlin.utils
 
 import android.app.Application
+import com.example.demokotlin.dagger.AppComponent
+import com.example.demokotlin.dagger.DaggerAppComponent
+import com.example.demokotlin.dagger.ProviderModule
 
 class KotlinApplication : Application() {
 
-   lateinit var appComponent: AppComponent
+    lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()
-    initDagger()
+        initDagger()
     }
 
     private fun initDagger() {
@@ -16,7 +19,6 @@ class KotlinApplication : Application() {
             .providerModule(ProviderModule())
             .build()
     }
-
 
 
     fun getApppComponent(): AppComponent {

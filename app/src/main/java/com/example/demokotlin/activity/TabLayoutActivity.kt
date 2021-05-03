@@ -7,13 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.ViewPager
 import com.example.demokotlin.R
+import com.example.demokotlin.activity.ParentActivity
 import com.example.demokotlin.adapter.TabLayoutAdapter
 import com.example.demokotlin.databinding.ActivitySimpleListView2Binding
 import com.example.demokotlin.databinding.TabLayoutActivityBinding
 import com.google.android.material.tabs.TabLayout
 import java.util.ArrayList
 
-class TabLayoutActivity : AppCompatActivity() {
+class TabLayoutActivity : ParentActivity()  {
 
     lateinit var binding: TabLayoutActivityBinding
 

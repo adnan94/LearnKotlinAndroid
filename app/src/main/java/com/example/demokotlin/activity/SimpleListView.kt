@@ -3,13 +3,14 @@ package revo.adnan.com.learnkotln
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.example.demokotlin.utils.ApplicationUtils
 import com.example.demokotlin.R
+import com.example.demokotlin.activity.ParentActivity
 import com.example.demokotlin.databinding.ActivitySimpleListView2Binding
 import java.util.ArrayList
 
-class SimpleListView : AppCompatActivity() {
+class SimpleListView : ParentActivity()  {
 
     private lateinit var list: ArrayList<String>
     private lateinit var adapter: ArrayAdapter<String>
@@ -30,7 +31,7 @@ class SimpleListView : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
                 binding.editText.text = null
             } else {
-                Toast.makeText(this, "Enter Text", Toast.LENGTH_SHORT).show();
+                ApplicationUtils.showToast("Enter Text", applicationContext)
             }
         })
     }

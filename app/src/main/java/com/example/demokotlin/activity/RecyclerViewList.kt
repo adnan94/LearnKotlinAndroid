@@ -1,19 +1,18 @@
 package com.example.demokotlin.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.*
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.demokotlin.utils.ApplicationUtils
 import com.example.demokotlin.R
 import com.example.demokotlin.adapter.RecyclerViewAdapter
 import com.example.demokotlin.databinding.ActivityRecyclerViewListBinding
 import revo.adnan.com.learnkotln.Model
 import java.util.ArrayList
 
-class RecyclerViewList : AppCompatActivity() {
+class RecyclerViewList : ParentActivity()  {
 
     private lateinit var list: ArrayList<Model>
     private lateinit var adapter: RecyclerViewAdapter
@@ -41,7 +40,7 @@ class RecyclerViewList : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
                 binding.editText.text = null
             } else {
-                Toast.makeText(this, "Enter Text", Toast.LENGTH_SHORT).show();
+                ApplicationUtils.showToast("Got Data", applicationContext)
             }
         })
     }

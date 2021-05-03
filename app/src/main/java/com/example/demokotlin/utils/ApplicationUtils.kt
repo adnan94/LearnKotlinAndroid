@@ -1,4 +1,4 @@
-package com.example.demokotlin
+package com.example.demokotlin.utils
 
 import android.content.Context
 import android.widget.Toast
@@ -10,6 +10,4 @@ class ApplicationUtils {
            Toast.makeText(applicationContext, text, Toast.LENGTH_SHORT).show()
        }
    }
-
-
 }
