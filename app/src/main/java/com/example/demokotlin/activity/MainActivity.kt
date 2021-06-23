@@ -57,20 +57,25 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this, RetrofitActivity::class.java)
             startActivity(i)
         })
+
+        binding!!.chipsLayoutBtn.setOnClickListener(View.OnClickListener {
+            var i = Intent(this, ChipsLayoutActivity::class.java)
+            startActivity(i)
+        })
     }
 
     private fun practiceWork() {
         ///////////////Object Of Practice Class and method overloading////////////////////
         var practice: PracticeClass = PracticeClass();
-        practice.getPrice()
-        practice.getPrice(23)
-        practice.getPrice("Employed")
-        practice.getPrice("Adnan", "Ahmed")
-
-        var returnType: String = practice.returnTypeFuction()
-        Log.d("TAG", "The Value Returned Is " + returnType);
-        practice.baap(3);
-        practice.baap();
+//        practice.getPrice()
+//        practice.getPrice(23)
+//        practice.getPrice("Employed")
+//        practice.getPrice("Adnan", "Ahmed")
+//
+//        var returnType: String = practice.returnTypeFuction()
+//        Log.d("TAG", "The Value Returned Is " + returnType);
+//        practice.baap(3);
+//        practice.baap();
         //        var a: Int = 10;
 //        val b: Int = 20;
 //        var c: Int = 30;

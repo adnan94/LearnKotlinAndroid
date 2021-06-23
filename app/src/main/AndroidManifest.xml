@@ -25,6 +25,7 @@
         <activity android:name="revo.adnan.com.learnkotln.SimpleListView" />
         <activity android:name="revo.adnan.com.learnkotln.CustomListView" />
         <activity android:name="revo.adnan.com.learnkotln.TabLayoutActivity" />
+        <activity android:name="revo.adnan.com.learnkotln.ChipsLayoutActivity" />
         <activity android:name="revo.adnan.com.learnkotln.RetrofitActivity" />
         <activity android:name=".activity.ParentActivity" />
     </application>
