@@ -16,6 +16,8 @@ public class PracticeClass : ParentClass() {
 
     fun minus(a: Int, b: Int): Int = a - b
 
+//    Unit:No meaning full value
+
     fun returnNoMeaningfulValue(a: Int, b: Int): Unit {
         println("sum of a-$a and b-$b is ${a + b}")
     }
@@ -165,6 +167,7 @@ public class PracticeClass : ParentClass() {
 //    val p: String by lazy {
 //        // compute the string
 //    }
+//    lazy keyowrk not allocate memory until it use in code
 
 
     /////////////////////////////abstract classes
@@ -846,6 +849,70 @@ public class PracticeClass : ParentClass() {
 //        item?.let { println(it) } // prints Kotlin and ignores null
 //    }
 
+
+    //    Null Safety Operators
+    fun nullSafetyWork() {
+
+        var name: String? = "Adnan"
+        var country: String? = null
+
+
+        //?: Elvis operator
+        name ?: print("value is null")
+//        or
+        var valuee = if (name != null) {
+        } else {
+        }
+
+        //?    Safe call operator
+        name?.length
+        print("value is ${country?.length}")
+
+        // ?.Let{}   Safe call operator with let
+        name?.let {
+            print(name)
+        }
+        country?.let {
+            print(country)
+        }
+
+
+        // !! not null assertion
+        name!!.length
+        country!!.length //throws null pointer exception
+
+    }
+
+
+    fun lateInitWork() {
+//    Late INIT keyword
+//    if i dont want to initilize variable i want to assign value later i use lateinit variable
+        lateinit var telloTalk: String
+//        dont use ? with lateinit
+        //alwas var
+        //we promise our compile to initilize this var before using it
+        print(telloTalk) //throws null pointer exception
+        telloTalk = "TelloTalk"
+        print(telloTalk) //now its fine
+    }
+
+
+    fun lazyKeyword() {
+//        nullable allowed
+//        use var val no matter
+
+//        val telloTalk = "tellotalk" memory allocated
+
+//        val telloTalk:String by lazy{
+//        "tellotalk"
+//        }
+
+        //memory only allocated when variable is used one
+    }
+
+
+//suspend keyword used for calling suspending function from courotine
+//    Courotine  launch , async , runBlocking
 }
 
 
